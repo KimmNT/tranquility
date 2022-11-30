@@ -21,6 +21,9 @@ const QUERY = gql`
       logo {
         url
       }
+      thumbnail {
+        url
+      }
     }
   }
 `;
@@ -47,7 +50,11 @@ export default function Home({ changings, collections }) {
 
       <main className={styles.main}>
         {changings.map((changing) => (
-          <Nav logo={changing.logo} key={changing.id} />
+          <Nav
+            logo={changing.logo}
+            key={changing.id}
+            thumbnail={changing.thumbnail}
+          />
         ))}
         <section className={styles.thumbnail}>
           {/* <video autoplay loop muted>

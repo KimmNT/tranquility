@@ -1,0 +1,11 @@
+@import './base';
+
+.main{
+    position: relative;
+    .thumbnail{
+        video{
+            width: 100%;
+            filter: brightness(.6);
+        }
+    }
+}

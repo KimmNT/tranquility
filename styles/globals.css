@@ -13,14 +13,19 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    /* font-size: 62.5%; */
   }
   body {
-    color: white;
-    background: black;
+    font-family: 'Lato';
   }
+}
+@font-face {
+  font-family: "Lato";
+  src: url(../public/fonts/Lato-Regular.ttf);
 }

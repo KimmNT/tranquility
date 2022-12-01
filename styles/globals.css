@@ -20,6 +20,7 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     /* font-size: 62.5%; */
+    background-color: #000;
   }
   body {
     font-family: 'Lato';

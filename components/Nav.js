@@ -31,6 +31,7 @@ function Nav({ logo, thumbnail }) {
               <FaWindowClose />
             </label>
           </div>
+          <div className={styles.navbar__slide_item}></div>
         </div>
       </div>
     </div>

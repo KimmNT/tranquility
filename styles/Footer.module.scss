@@ -1,0 +1,88 @@
+@import './base';
+
+.footer{
+    background-color: #000;
+    // padding: 2rem;   
+    .footer__content{
+        padding: 3rem 0;
+        .footer__top{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .item{
+                width: 33.33%;
+                display: flex;
+                &.logo{
+                    width: 20%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &.navigation{
+                    color: #fff;
+                    display: flex;
+                    gap: 2rem;
+                    .navigation__item{
+                        a{
+                            background-color: transparent;
+                        }
+                        &::after{
+                            content: "";
+                            display: block;
+                            width: 0%;
+                            height: 2px;
+                            background-color: #fff;
+                            transition: $transition;
+                            margin-top: 1rem;
+                        }
+                        &:hover{
+                            transition: $transition;
+                            &::after{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                &.media{
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
+                    .media__item{
+                        font-size: 2rem;
+
+                    }
+                }
+            }
+        }
+        .footer__bottom{
+            &::before{
+                content: "";
+                display: block;
+                margin: 2rem 0;
+                width: 100%;
+                height: 2px;
+                background-color: #fff;
+            }
+            .content{
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+                padding: 1rem 0 0;
+                font-size: 1.5rem;
+                color: #fff;
+
+                .media{
+                    display: flex;
+                    gap: 2rem;
+                    .media__item{
+                        background-color: transparent;
+                    }
+                }
+        
+        }
+        }
+    }
+
+}

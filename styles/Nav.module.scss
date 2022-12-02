@@ -14,7 +14,7 @@
             align-items: center;
             .top__menu__item{
                 color: $main_color;
-                font-size: 1.4rem;
+                font-size: 2rem;
                 cursor: pointer;
             }
             .top__menu__logo{
@@ -45,7 +45,7 @@
             padding: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 7rem;
+            gap: 10rem;
             width: 30%;
             background-color: $main_color;
             border-right: 2px solid #fff;
@@ -65,14 +65,14 @@
                 }
                 .close{
                     color: #fff;
-                    font-size: 1.4rem;
+                    font-size: 2rem;
                 }
             }
             .navbar__slide_item{
                 display: flex;
                 flex-direction: column;
-                gap: 2rem;
-                font-size: 1.4rem;
+                gap: 1rem;
+                font-size: 2rem;
                 color: #fff;
                 .item__link{
                     position: relative;
@@ -89,7 +89,7 @@
                     }
                     &:hover{
                         &::after{
-                            left: -5%;
+                            left: -1%;
                             transition: $transition;
                         }
                     }
@@ -98,8 +98,8 @@
             }
             .navbar__slide_media{
                 display: flex;
-                gap: 2rem;
-                font-size: 1.2rem;
+                gap: 1rem;
+                font-size: 2rem;
                 color: #fff;
             }
         }

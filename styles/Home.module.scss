@@ -2,11 +2,141 @@
 
 .main{
     position: relative;
-    background-color: #fff;
+    // background-color: #fff;
     .thumbnail{
+        position: relative;
         video{
             width: 100%;
             filter: brightness(.6);
+        }
+        .thumbnail__btn{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+            transition: $transition;
+            &:hover{
+                top: 49%;
+                transition: $transition;
+            }
+            a{
+                border: 2px solid #fff;
+                background-color: transparent;
+                color: #fff;
+                &:hover{
+                    background-color: $main_color;
+                    transition: $transition;
+
+                }
+            }
+        }
+    }
+    .collection{
+        margin-top: 4.5rem;
+        background-color: #fff;
+        padding: 4rem 0;
+        .collection__list{
+            display: flex;
+            padding: 4rem 2rem;
+            .item{
+                height: 20rem;
+                border-radius: .5rem;
+                box-shadow: 0px 2px 5px black;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: .5rem;
+                }
+                .item__name{
+                    font-size: 1.6rem;
+                    padding: 1rem 0;
+                    font-weight: 600;
+
+                }
+            }
+        }
+    }
+    .about{
+        .about__content{
+            .card{
+                position: relative;
+                background-image:linear-gradient(rgba(0,0,0,0.57),rgba(0,0,0,0.57)), url(../public/imgs/brand/card.jpg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                height: 70vh;
+                min-height: 20vh;
+                .card__content{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    text-align: center;
+                    .slogan{
+                        font-size: 10rem;
+                        color: #fff;
+                        margin-bottom: 5rem;
+                    }
+                    .btn{
+                        background-color: transparent;
+                        border: 2px solid #fff;
+                        color: #fff;
+                        transition: $transition;
+                    }
+                }
+            }
+            .inspiration{
+                display: flex;
+                justify-content: space-between;
+                padding: 3rem 0;
+
+                .headline{
+                    width: 45%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5rem;
+                    p{
+                        font-size: 5rem;
+                        font-style: italic;
+                    }
+                    .headline__img{
+                        width:50%;
+                        height: 50%;
+                        border-radius: 50%;
+                        border: 5px solid $main_color;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .content{
+                    width: 45%;
+                    padding: 5rem 10rem;
+                    background-color: $main_color;
+                    color: #fff;
+                    border-radius: .2rem;
+                    p{
+                        font-size: 2rem;
+                        line-height: 5rem   ;
+                        margin-bottom: 3rem;
+                    }
+                    .content__btn{
+                        // background-color: #fff;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        border-bottom: 2px solid #fff;
+                    }
+                }
+            }
         }
     }
 }

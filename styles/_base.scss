@@ -16,3 +16,22 @@ $transition: all ease-in-out .3s;
     max-width: 1350px !important;
     margin: 0 auto;
 }
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 0;
+    .headline{
+        font-size: 3rem;
+        color: $main_color;
+    }
+    .btn{
+        border: 2px solid $main_color;
+        &:hover{
+            background-color: $main_color;
+            color: #fff;
+            transform: translateX(1rem);
+        }
+    }
+}

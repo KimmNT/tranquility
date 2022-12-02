@@ -1,0 +1,31 @@
+@import './base';
+
+.collection{
+    margin-top: 4.5rem;
+    background-color: #fff;
+    padding: 4rem 0;
+    .collection__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .headline{
+
+        }
+    }
+    .collection__list{
+        display: flex;
+        padding: 2rem;
+        .item{
+            width: 30rem;
+            height: 20rem;
+            border-radius: .5rem;
+            box-shadow: 5px 5px 10px black;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: .5rem;
+            }
+        }
+    }
+}

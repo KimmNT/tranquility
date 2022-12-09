@@ -1,0 +1,53 @@
+// PC
+@mixin pc($width: 1440px) {
+    @media screen and (max-width: $width) {
+      @content;
+    }
+  }
+  
+  // Ipad
+  @mixin ipad($maxWidth: 1090px) {
+    @media screen and (max-width: $maxWidth) {
+      @content;
+    }
+  }
+  
+  @mixin mediumIpad($maxWidth: 992px) {
+    @media screen and (max-width: $maxWidth) {
+      @content;
+    }
+  }
+  
+  @mixin smallIpad($maxWidth: 800px) {
+    @media screen and (max-width: $maxWidth) {
+      @content;
+    }
+  }
+  // tablet
+  
+  @mixin tablet($maxWidth: 767px) {
+    @media screen and (max-width: $maxWidth) {
+      @content;
+    }
+  }
+  // mobile
+  
+  @mixin mobile($maxWidth: 475px) {
+    @media screen and (max-width: $maxWidth) {
+      @content;
+    }
+  }
+  
+  @mixin smallMobile($maxWidth: 375px) {
+    @media screen and (max-width: $maxWidth) {
+      @content;
+    }
+  }
+  
+  // custome
+  
+  @mixin cus($maxWidth) {
+    @media screen and (max-width: $maxWidth) {
+      @content;
+    }
+  }

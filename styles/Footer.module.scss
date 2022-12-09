@@ -45,15 +45,6 @@
                         }
                     }
                 }
-                &.media{
-                    display: flex;
-                    justify-content: center;
-                    gap: 2rem;
-                    .media__item{
-                        font-size: 2rem;
-
-                    }
-                }
             }
         }
         .footer__bottom{
@@ -72,11 +63,12 @@
                 padding: 1rem 0 0;
                 font-size: 1.5rem;
                 color: #fff;
-
                 .media{
                     display: flex;
-                    gap: 2rem;
-                    .media__item{
+                    // gap: .1rem;
+                    a{
+                        font-size: 2rem;
+                        padding: 1rem 1.5rem;
                         background-color: transparent;
                     }
                 }

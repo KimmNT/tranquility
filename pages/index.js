@@ -111,9 +111,9 @@ export default function Home({ collections, products, sales, feedbacks }) {
           </div>
           <Swiper
             //space between items
-            spaceBetween={50}
+            spaceBetween={30}
             //number of slides show up
-            slidesPerView={3}
+            slidesPerView={4}
             //autoplay
             autoplay={{
               delay: 2000,

@@ -6,7 +6,7 @@
         background-color: #fff;
         width: 100%;
         z-index: 99;
-        border-bottom: 2px solid $main_color;
+        // border-bottom: 2px solid $main_color;
         .top__menu__content{
             padding: 1rem 0;
             display: flex;
@@ -45,7 +45,7 @@
             padding: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 10rem;
+            gap: 5rem;
             width: 30%;
             background-color: $main_color;
             border-right: 2px solid #fff;
@@ -99,8 +99,10 @@
             .navbar__slide_media{
                 display: flex;
                 gap: 1rem;
-                font-size: 2rem;
                 color: #fff;
+                a{
+                    font-size: 3rem;
+                }
             }
         }
         .navbar__slide_close{

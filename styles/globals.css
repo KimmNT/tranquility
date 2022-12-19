@@ -19,9 +19,9 @@ a {
 }
 button{
   border: none;
-  padding: 1rem 1.5rem;
+  padding: 2rem 1.5rem;
   font-size: 1.5rem;
-  border-radius: .5rem;
+  border-radius: .2rem;
 }
 
 * {

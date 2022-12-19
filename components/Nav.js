@@ -10,12 +10,15 @@ import {
 import Link from "next/link";
 
 function Nav({ logo, thumbnail }) {
+  const showNav = () => {
+    console.log("Show Nav MTF!!");
+  };
   return (
     <div className={styles.navbar}>
       <div className={styles.top__menu}>
         <div className={`${styles.top__menu__content} ${styles.container}`}>
           <div className={styles.top__menu__item}>
-            <label for="navbar">
+            <label for="navbar" onClick={showNav}>
               {" "}
               <FaGripLines />
             </label>

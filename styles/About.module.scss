@@ -1,5 +1,39 @@
 @import './base';
 
 .about{
-    margin-top: 4.5rem;
+    margin-top: 6rem;
+    // background-color: teal;
+    //WELCOME
+    .about__welcome{
+        // background-color: teal;
+        padding: 10rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        .welcome__headline{
+            width: 30%;
+            font-size: 5rem;
+            span{
+                color: $main_color;
+                font-style: italic;
+                font-size: 7rem;
+                margin-left: 2rem;
+            }
+        }
+        .welcome__content{
+            width: 50%;
+            font-size: 1.6rem;
+            line-height: 1.6;
+            button{
+                margin-top: 3rem;
+                background-color: $main_color;
+                color: #fff;
+                
+                a{
+                    font-size: 1.6rem; 
+                    font-family: "Lato";
+                }
+            }
+        }
+    }
 }

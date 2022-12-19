@@ -29,7 +29,7 @@
     }
     .navbar__input:checked ~ .navbar__slide{
         transform: translateX(0%);
-        transition: $transition;
+        transition: all ease-in-out .5s;
     }
     .navbar__slide{
         position: fixed;
@@ -39,7 +39,7 @@
         height: 100%;
         z-index: 999;
         transform: translateX(-100%);
-        transition: $transition;
+        transition: all ease-in-out 1s;
         display: flex;
         .navbar__slide_content{
             padding: 2rem;
@@ -108,8 +108,6 @@
         .navbar__slide_close{
             width: 70%;
             height: 100%;
-            background-color: #000;
-            opacity: .2;
         }
     }
 }

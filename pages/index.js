@@ -26,13 +26,12 @@ const graphcms = new GraphQLClient(
 const QUERY = gql`
   {
     collections {
-      id
       title
-      describe {
-        html
-      }
       image {
         url
+      }
+      collectionTitle {
+        name
       }
     }
     products {
@@ -114,6 +113,11 @@ export default function Home({ collections, products, sales, feedbacks }) {
             spaceBetween={30}
             //number of slides show up
             slidesPerView={4}
+            pagination={{
+              el: ".swiper__pagination",
+              type: "bullets",
+              clickable: true,
+            }}
             //autoplay
             autoplay={{
               delay: 2000,
@@ -121,23 +125,18 @@ export default function Home({ collections, products, sales, feedbacks }) {
             className={styles.collection__list}
           >
             {collections.map((collection) => (
-              <SwiperSlide className={styles.item}>
+              <SwiperSlide key={collection.id} className={styles.item}>
                 <img src={collection.image.url} alt="collection img" />
                 <p className={styles.item__name}>{collection.title}</p>
+                <p className={styles.item__name}>
+                  Collection: {collection.collectionTitle.name}
+                </p>
               </SwiperSlide>
             ))}
           </Swiper>
         </section>
         {/* About us */}
         <section className={styles.about}>
-          <div className={styles.about__header}>
-            <div className={styles.about__header_content}>
-              <p className={styles.title}>WEAR AND FEEL</p>
-              <a href="/about" className={styles.btn}>
-                READ MORE
-              </a>
-            </div>
-          </div>
           <div className={`${styles.about__content} ${styles.container}`}>
             <div className={styles.image}>
               <img src="./imgs/brand/clothes_tag.jpg" alt="about img" />
@@ -157,7 +156,7 @@ export default function Home({ collections, products, sales, feedbacks }) {
                     <FaHandsWash />
                   </div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  do eiusmod tempor incidid.
                 </div>
                 <div className={styles.item}>
                   <div className={styles.item__icon}>
@@ -165,16 +164,24 @@ export default function Home({ collections, products, sales, feedbacks }) {
                     <FaSoap />
                   </div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  do eiusmod tempor incidid.
                 </div>
                 <div className={styles.item}>
                   <div className={styles.item__icon}>
                     <FaSun />
                   </div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  do eiusmod tempor incidid.
                 </div>
               </div>
+            </div>
+          </div>
+          <div className={styles.about__header}>
+            <div className={styles.about__header_content}>
+              <p className={styles.title}>WEAR AND FEEL</p>
+              <a href="/about" className={styles.btn}>
+                READ MORE
+              </a>
             </div>
           </div>
         </section>
@@ -200,7 +207,7 @@ export default function Home({ collections, products, sales, feedbacks }) {
                 className={styles.product__list}
               >
                 {products.map((product) => (
-                  <SwiperSlide className={styles.item}>
+                  <SwiperSlide key={product.id} className={styles.item}>
                     <img src={product.image.url} alt="collection img" />
                     <p className={styles.item__detail}>{product.name}</p>
                     <p className={styles.item__detail}>{product.price} VND</p>
@@ -208,35 +215,6 @@ export default function Home({ collections, products, sales, feedbacks }) {
                 ))}
               </Swiper>
             </div>
-          </div>
-        </section>
-        {/* Sale off */}
-        <section className={`${styles.sale} ${styles.container}`}>
-          <div className={styles.header}>
-            <h1 className={styles.headline}>BIG SALE</h1>
-            <a href="/products" className={styles.btn}>
-              VIEW MORE
-            </a>
-          </div>
-          <div className={styles.sale__list}>
-            {sales.map((sale) => (
-              <div className={styles.item}>
-                <div className={styles.image}>
-                  <img src={sale.image.url} alt="sale img" />
-                </div>
-                <div className={styles.detail}>
-                  <p className={styles.name}>{sale.name}</p>
-                  <div className={styles.discount__price}>
-                    <p className={`${styles.price}  ${styles.discount}`}>
-                      {sale.beforeDiscount} VND
-                    </p>
-                    <p className={`${styles.price}`}>
-                      {sale.afterDiscount} VND
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
         {/* Feedback */}
@@ -247,7 +225,7 @@ export default function Home({ collections, products, sales, feedbacks }) {
           <div className={styles.feedback__content}>
             <Swiper
               //space between items
-              spaceBetween={50}
+              spaceBetween={10}
               //number of slides show up
               slidesPerView={2}
               //autoplay
@@ -257,7 +235,7 @@ export default function Home({ collections, products, sales, feedbacks }) {
               className={styles.feedback__list}
             >
               {feedbacks.map((feedback) => (
-                <SwiperSlide className={styles.item}>
+                <SwiperSlide key={feedback.id} className={styles.item}>
                   <div className={styles.item__content}>
                     <div className={styles.item__content_icon}>
                       <FaQuoteLeft />
@@ -282,6 +260,35 @@ export default function Home({ collections, products, sales, feedbacks }) {
                 </SwiperSlide>
               ))}
             </Swiper>
+          </div>
+        </section>
+        {/* Sale off */}
+        <section className={`${styles.sale} ${styles.container}`}>
+          <div className={styles.header}>
+            <h1 className={styles.headline}>BIG SALE</h1>
+            <a href="/products" className={styles.btn}>
+              VIEW MORE
+            </a>
+          </div>
+          <div className={styles.sale__list}>
+            {sales.map((sale) => (
+              <div key={sale.id} className={styles.item}>
+                <div className={styles.image}>
+                  <img src={sale.image.url} alt="sale img" />
+                </div>
+                <div className={styles.detail}>
+                  <p className={styles.name}>{sale.name}</p>
+                  <div className={styles.discount__price}>
+                    <p className={`${styles.price}  ${styles.discount}`}>
+                      {sale.beforeDiscount} VND
+                    </p>
+                    <p className={`${styles.price}`}>
+                      {sale.afterDiscount} VND
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
         {/* Member */}
